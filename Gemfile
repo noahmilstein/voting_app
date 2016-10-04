@@ -6,6 +6,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'listen'
+# gem 'google-api-client'
+# gem 'doorkeeper'
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
@@ -13,6 +15,9 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem 'httparty'
+  gem 'rb-readline'
+  gem 'dotenv-rails'
 end
 
 group :test do

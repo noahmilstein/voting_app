@@ -1,0 +1,31 @@
+<% unless @results.empty? %>
+<% require 'pry'; binding.pry %>
+
+<h1>Results</h1>
+<ul>
+  <% @results["offices"].each do |office| %>
+    <li><%= office["name"] %></li>
+    <% office["officialIndices"].each do |officialindex| %>
+      <li><%= @results["officials"][officialindex]["name"] %></li>
+      <li><%= @results["officials"][officialindex]["party"] %></li>
+      <% unless @results["officials"][officialindex]["phones"].nil? %>
+        <% @results["officials"][officialindex]["phones"].each do |phone| %>
+          <li><%= phone %></li>
+        <% end %>
+      <% end %>
+      <li><%= @results["officials"][officialindex]["urls"] %></li>
+      <li><%= @results["officials"][officialindex]["photoUrl"] %></li>
+      <% unless @results["officials"][officialindex]["channels"].nil? %>
+        <% @results["officials"][officialindex]["channels"].each do |channel| %>
+          <% portals = ["Facebook", "Twitter", "YouTube"] %>
+          <% if channel.values.any? { |x| portals.include?(x) } %>
+            <li><%= channel["type"].downcase %>/<%= channel["id"] %>.com</li>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+</ul>
+
+<%= render "election" %>

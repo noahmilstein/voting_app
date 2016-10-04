@@ -1,0 +1,10 @@
+<h1>Search for your representatives</h1>
+<%= form_tag(search_reps_searches_path, method: "get") do %>
+  <%= label_tag(:address, "Address") %>
+  <%= text_field_tag(:address) %>
+  <%= label_tag(:city, "City") %>
+  <%= text_field_tag(:city) %>
+  <%= label_tag(:state, "State") %>
+  <%= select_tag(:state, options_for_select(@states)) %>
+  <%= submit_tag("Search") %>
+<% end %>
