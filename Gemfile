@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'listen'
 # gem 'google-api-client'
 # gem 'doorkeeper'
+# gem 'devise' # current branch 
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
